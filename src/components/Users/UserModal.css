@@ -1,0 +1,160 @@
+.user-modal .modal-body {
+  padding: 0;
+}
+
+.user-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.user-form-container {
+  padding: 25px;
+  flex: 1;
+}
+
+.user-info-footer {
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  padding: 20px 25px;
+  margin: 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-item label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-item span {
+  font-size: 14px;
+  color: #495057;
+  font-weight: 500;
+}
+
+.alert {
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin: 25px 25px 0;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: inherit;
+  opacity: 0.6;
+  padding: 0;
+  margin-left: auto;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+
+.btn-close::before {
+  content: '×';
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Loading state styles */
+.user-modal-content.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Modal header icon styling */
+.user-modal .modal-title i {
+  color: #007bff;
+  font-size: 16px;
+}
+
+/* Animation for alert appearance */
+.alert {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .user-form-container {
+    padding: 20px;
+  }
+  
+  .user-info-footer {
+    padding: 15px 20px;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .alert {
+    margin: 20px 20px 0;
+    font-size: 14px;
+  }
+}
+
+/* Focus management for modal */
+.user-modal .form-control:first-of-type {
+  /* This ensures first input gets focus when modal opens */
+}
+
+/* Accessibility improvements */
+.user-modal .modal-title {
+  id: 'user-modal-title';
+}
+
+.user-modal .modal-body {
+  aria-labelledby: 'user-modal-title';
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .info-item label {
+    color: #000;
+  }
+  
+  .info-item span {
+    color: #000;
+  }
+  
+  .user-info-footer {
+    border-top: 2px solid #000;
+  }
+}
